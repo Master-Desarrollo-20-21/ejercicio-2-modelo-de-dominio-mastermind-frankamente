@@ -1,0 +1,11 @@
+@startuml
+title Mastermind - State Diagram
+state A as " "
+state B as " "
+state C as " "
+[*] --> A: CodeMaker: createSecretCode
+A --> B: Decoder: proposeCode
+B --> C : CodeMaker: setMatchingScore
+C --> A : [isNotCorrect]
+C --> [*] : [isCorrect || allTurnsDown]
+@enduml

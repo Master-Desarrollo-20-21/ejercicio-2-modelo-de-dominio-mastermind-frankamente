@@ -1,0 +1,33 @@
+@startuml
+title Mastermind - Class Diagram
+Mastermind *-down-> "2" Player
+Mastermind *-down-> Board
+Mastermind *-down-> Turn
+
+Turn -down-> "2" Player
+
+Player <|-down- Decoder
+Player <|-down- CodeMaker
+
+CodeMaker -down-> CodeMakerBoard
+Decoder -down-> DecoderBoard
+
+DecoderBoard *-down-> "0..5" Matching
+DecoderBoard *-down-> Code
+
+Board *-down-> "7" DecoderBoard
+Board *-down-> CodeMakerBoard
+
+CodeMakerBoard *-down-> "5" Code
+
+Matching <|-down- Black
+Matching <|-down- White
+
+Code <|-down- Red
+Code <|-down- Orange
+Code <|-down- Yellow
+Code <|-down- Green
+Code <|-down- Blue
+Code <|-down- Purple
+
+@enduml
